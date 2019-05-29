@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="instance">
+
+	<insert id="insert" parameterType="com.lk.app.TaskInstance">
+		INSERT INTO T_DIS_INSTANCE_ARCHIVE_BAK (
+		   ID, ARCHIVE_TASK_ID,
+		   ORIGINAL_ID, TASK_NAME,
+		   INSTANCE_TYPE, STATUS, EXEC_PARAMETERS,
+		   EMAIL, SFTP,  MODIFY_DATATIME,
+		   CREATE_DATATIME, WORK_DIR,
+		   REPORT_NAME,ATTACH_NAME, EXCEPTION_MESSAGE,
+		   REPORT_ID, LAST_START_DATETIME, LAST_STOP_DATETIME)
+		VALUES (
+		#{id},
+		#{archiveTaskId},
+		#{originalId},
+		#{taskName},
+		#{instanceType},
+		#{status},
+		#{execParameters},
+		#{email},
+		#{sftp,jdbcType=VARCHAR},
+		#{modifyDataTime,jdbcType=DATE},
+		#{createDataTime},
+		#{workDir},
+		#{reportName},
+		#{attachName},
+		#{exceptionMessage},
+		#{reportId},
+		#{lastStartDatetime},
+		#{lastStopDatetime})
+	</insert>
+
+</mapper>
