@@ -1,4 +1,4 @@
-package com.lk.app.factorybean.service;
+package com.lk.app.factorybeanaop.service;
 
 /**
  * @author LK

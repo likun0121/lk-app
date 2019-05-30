@@ -1,18 +1,18 @@
 package com.lk.app.lifecycle.service.impl;
 
-import com.lk.app.lifecycle.service.UserService;
+import com.lk.app.lifecycle.service.ProductService;
 
 /**
- * 用户业务实现
+ * 产品业务实现
  *
  * @author LK
  * @date 2019/5/30
  */
-public class UserServiceImpl implements UserService {
+public class ProductServiceImpl implements ProductService {
 
     @Override
-    public void addUser() {
-        System.out.println("add user");
+    public void addProduct() {
+        System.out.println("add product");
     }
 
     private void init() {

@@ -1,10 +1,8 @@
-package com.lk.app.factoryhook.beanpostprocessor;
+package com.lk.app.lifecycle.beanpostprocessor;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
@@ -17,15 +15,15 @@ public class BeanPostProcessorImpl implements BeanPostProcessor {
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        System.out.println("before init" + beanName);
+        System.out.println("before init : " + beanName);
         return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        System.out.println("after init" + beanName);
+        System.out.println("after init : " + beanName);
         return Proxy.newProxyInstance(BeanPostProcessorImpl.class.getClassLoader(),
-                BeanPostProcessorImpl.class.getInterfaces(),
+                bean.getClass().getInterfaces(),
                 (proxy, method, args) -> {
 
                     System.out.println("before invoke method");

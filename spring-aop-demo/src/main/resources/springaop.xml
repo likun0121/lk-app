@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       					   http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+    <!-- 1、创建目标类对象 -->
+    <bean id="aopServiceId" class="com.lk.app.springaop.service.impl.AopServiceImpl"></bean>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0">
+    <!-- 2、创建切面类对象（通知） -->
+    <bean id="myAdvice" class="com.lk.app.springaop.aspect.Advices"></bean>
 
-</AnchorPane>
+    <!-- 3、aop配置
+        3.1、导入命名空间
+        3.2、使用<aop:config>进行配置
+                proxy-target-class 声明使用cglib代理
+            <aop:pointcut> 表示切入点，即目标类中被拦截增强的方法，id表示切入点唯一标识的名称，expression是切入点表达式
+            <aop:advisor> 表示特殊的切面，只有一个通知 和 一个切入点
+                advice-ref 表示通知的引用
+                pointcut-ref 表示切入点的引用 即<aop:pointcut>的id
+        3.3、切入点表达式：
+
+    -->
+    <aop:config proxy-target-class="true">
+        <aop:pointcut id="myPointCut" expression="execution(* com.lk.app.springaop.service.impl.*.*(..))"/>
+        <aop:advisor advice-ref="myAdvice" pointcut-ref="myPointCut"/>
+    </aop:config>
+
+</beans>

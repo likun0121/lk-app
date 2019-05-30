@@ -1,15 +1,15 @@
 package com.lk.app.lifecycle.service;
 
 /**
- * 用户业务接口
+ * 产品业务接口
  *
  * @author LK
  * @date 2019/5/30
  */
-public interface UserService {
+public interface ProductService {
 
     /**
-     * 添加用户
+     * 添加产品
      */
-    void addUser();
+    void addProduct();
 }

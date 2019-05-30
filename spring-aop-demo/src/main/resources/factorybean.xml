@@ -5,10 +5,10 @@
        					   http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 1、创建目标类对象 -->
-    <bean id="userServiceId" class="com.lk.app.factorybean.service.impl.UserServiceImpl"></bean>
+    <bean id="userServiceId" class="com.lk.app.factorybeanaop.service.impl.UserServiceImpl"></bean>
 
     <!-- 2、创建切面类对象 -->
-    <bean id="aspectId" class="com.lk.app.factorybean.aspect.FactoryBeanAspect"></bean>
+    <bean id="aspectId" class="com.lk.app.factorybeanaop.aspect.FactoryBeanAspect"></bean>
 
     <!-- 3、创建代理工程对象
         * 使用工厂bean FactoryBean ，底层调用 getObject() 返回特殊bean
@@ -26,7 +26,7 @@
 			如果声明 optimize = true ，无论是否有接口，都采用cglib
     -->
     <bean id="proxyServiceId" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="interfaces" value="com.lk.app.factorybean.service.UserService"/>
+        <property name="interfaces" value="com.lk.app.factorybeanaop.service.UserService"/>
         <property name="target" ref="userServiceId"/>
         <property name="interceptorNames" value="aspectId"/>
     </bean>

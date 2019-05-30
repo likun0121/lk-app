@@ -1,6 +1,6 @@
-package com.lk.app.factorybean.service.impl;
+package com.lk.app.factorybeanaop.service.impl;
 
-import com.lk.app.factorybean.service.UserService;
+import com.lk.app.factorybeanaop.service.UserService;
 
 /**
  * @author LK

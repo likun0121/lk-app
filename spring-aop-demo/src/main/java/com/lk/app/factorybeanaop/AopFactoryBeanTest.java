@@ -1,6 +1,6 @@
-package com.lk.app.factorybean;
+package com.lk.app.factorybeanaop;
 
-import com.lk.app.factorybean.service.UserService;
+import com.lk.app.factorybeanaop.service.UserService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
