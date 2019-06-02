@@ -1,9 +1,0 @@
-[
-  {
-	"execParamDatasource": "report",
-	"key": "mail",
-	"paramRaqSoftExpressionEnabled": "false",
-	"paramStyle": "2",
-	"value": "select GETEMAILS2() from dual"
-  }
-]
