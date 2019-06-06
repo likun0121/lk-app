@@ -10,10 +10,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @author LK
  * @date 2019/5/30
  */
-public class LifeCycleTest {
+public class LifeCycle {
 
-    @Test
-    public void test() {
+    public void run() {
         String xmlPath = "lifecycle.xml";
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
 

@@ -11,10 +11,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @author LK
  * @date 2019/5/29
  */
-public class AopFactoryBeanTest {
+public class AopFactoryBean {
 
-    @Test
-    public void test() {
+    public void run() {
         String xmlPath = "factorybean.xml";
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
 

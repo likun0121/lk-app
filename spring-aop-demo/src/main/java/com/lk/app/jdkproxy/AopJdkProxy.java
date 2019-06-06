@@ -8,10 +8,9 @@ import org.junit.Test;
  * @author LK
  * @date 2019/4/19
  */
-public class AopJdkProxyTest {
+public class AopJdkProxy {
 
-    @Test
-    public void test1() {
+    public void run() {
         UserService userService = MyBeanFactory.createService();
         userService.addUser();
         userService.updateUser();

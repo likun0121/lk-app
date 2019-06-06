@@ -8,10 +8,9 @@ import org.junit.Test;
  * @author LK
  * @date 2019/4/19
  */
-public class AopCglibTest {
+public class AopCglib {
 
-    @Test
-    public void test1() {
+    public void run() {
         UserServiceImpl userService = MyBeanFactory.createService();
         userService.addUser();
         userService.updateUser();

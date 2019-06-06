@@ -11,10 +11,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @author LK
  * @date 2019/5/30
  */
-public class SpringAopTest {
+public class SpringAopRun {
 
-    @Test
-    public void test() {
+    public void springAop() {
         String xmlPath = "springaop.xml";
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
 
