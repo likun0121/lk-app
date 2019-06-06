@@ -11,7 +11,7 @@
 	<modules>
 		<module>quartz</module>
 		<module>executor</module>
-		<module>test</module>
+		<module>normal</module>
 		<module>spring-aop-demo</module>
         <module>mongodb-demo</module>
     </modules>
