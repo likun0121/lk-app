@@ -1,6 +1,6 @@
-package com.lk.app.aspectj.service.impl;
+package com.lk.app.aspectj.xml.service.impl;
 
-import com.lk.app.aspectj.service.TestService;
+import com.lk.app.aspectj.xml.service.TestService;
 
 /**
  * @author LK

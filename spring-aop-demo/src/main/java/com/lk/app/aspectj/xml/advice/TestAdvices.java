@@ -1,4 +1,4 @@
-package com.lk.app.aspectj.advice;
+package com.lk.app.aspectj.xml.advice;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;

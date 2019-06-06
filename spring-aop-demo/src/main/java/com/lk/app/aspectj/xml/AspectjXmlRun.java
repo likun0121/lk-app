@@ -1,6 +1,6 @@
 package com.lk.app.aspectj.xml;
 
-import com.lk.app.aspectj.service.TestService;
+import com.lk.app.aspectj.xml.service.TestService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

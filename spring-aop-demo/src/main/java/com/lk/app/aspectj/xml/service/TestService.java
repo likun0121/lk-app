@@ -1,4 +1,4 @@
-package com.lk.app.aspectj.service;
+package com.lk.app.aspectj.xml.service;
 
 /**
  * @author LK

@@ -8,10 +8,10 @@
                            http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!-- 目标类 -->
-    <bean id="testServiceId" class="com.lk.app.aspectj.service.impl.TestServiceImpl"/>
+    <bean id="testServiceId" class="com.lk.app.aspectj.xml.service.impl.TestServiceImpl"/>
 
     <!-- 切面类 -->
-    <bean id="adviceId" class="com.lk.app.aspectj.advice.TestAdvices"/>
+    <bean id="adviceId" class="com.lk.app.aspectj.xml.advice.TestAdvices"/>
 
     <!-- spring apo 配置
         <aop:aspect> 将切面类声明为“切面”，从而获得通知方法
@@ -22,7 +22,7 @@
     -->
     <aop:config>
         <aop:aspect ref="adviceId">
-            <aop:pointcut id="myPointcut" expression="execution(* com.lk.app.aspectj.service.impl.*.*(..))"/>
+            <aop:pointcut id="myPointcut" expression="execution(* com.lk.app.aspectj.xml.service.impl.*.*(..))"/>
             <!-- 1.前置通知
                 <aop:before method="" pointcut-ref="" pointcut=""/>
                     method : 通知，即切面类中的方法
