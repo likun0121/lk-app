@@ -1,12 +1,12 @@
 package com.lk.app.aspectj.xml.service.impl;
 
-import com.lk.app.aspectj.xml.service.TestService;
+import com.lk.app.aspectj.xml.service.XmlAspectService;
 
 /**
  * @author LK
  * @date 2019/6/6
  */
-public class TestServiceImpl implements TestService {
+public class XmlAspectServiceImpl implements XmlAspectService {
 
     @Override
     public void doSomething() {

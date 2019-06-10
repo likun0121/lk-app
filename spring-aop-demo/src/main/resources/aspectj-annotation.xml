@@ -2,16 +2,19 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        					   http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/aop
-                           http://www.springframework.org/schema/aop/spring-aop.xsd">
+                           http://www.springframework.org/schema/aop/spring-aop.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- 目标类 -->
-    <bean id="testServiceId" class="com.lk.app.aspectj.xml.service.impl.TestServiceImpl"/>
+    <!-- 1.扫描注解类 -->
+    <context:component-scan base-package="com.lk.app.aspectj.annotation"/>
 
-    <!-- 切面类 -->
-    <bean id="adviceId" class="com.lk.app.aspectj.xml.advice.TestAdvices"/>
+    <!-- 2.确定aop注解生效 -->
+    <aop:aspectj-autoproxy/>
 
     <!-- spring apo 配置
         <aop:aspect> 将切面类声明为“切面”，从而获得通知方法
@@ -19,10 +22,10 @@
         <aop:pointcut> 声明一个切入点，所有的通知都可以使用
             expression : 切入点表达式
             id : 切入点名称，用于其他通知引用
-    -->
     <aop:config>
         <aop:aspect ref="adviceId">
             <aop:pointcut id="myPointcut" expression="execution(* com.lk.app.aspectj.xml.service.impl.*.*(..))"/>
+    -->
             <!-- 1.前置通知
                 <aop:before method="" pointcut-ref="" pointcut=""/>
                     method : 通知，即切面类中的方法
@@ -71,8 +74,8 @@
                 通知方法格式 : public void after(JoinPoint joinPoint) {
                 例如 :
                 <aop:after method="afterAdvice" pointcut-ref="myPointcut"/>
+</aop:aspect>
+        </aop:config>
             -->
 
-        </aop:aspect>
-    </aop:config>
 </beans>

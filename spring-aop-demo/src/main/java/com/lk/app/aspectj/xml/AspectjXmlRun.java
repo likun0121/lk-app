@@ -1,6 +1,6 @@
 package com.lk.app.aspectj.xml;
 
-import com.lk.app.aspectj.xml.service.TestService;
+import com.lk.app.aspectj.xml.service.XmlAspectService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,10 +13,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class AspectjXmlRun {
 
     public void run() {
-        String path = "aspectj.xml";
+        String path = "aspectj-xml.xml";
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext(path);
-        TestService testService = (TestService) applicationContext.getBean("testServiceId");
-        testService.doSomething();
-        testService.again();
+        XmlAspectService xmlAspectService = (XmlAspectService) applicationContext.getBean("testServiceId");
+        xmlAspectService.doSomething();
+        xmlAspectService.again();
     }
 }
