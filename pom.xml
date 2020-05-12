@@ -15,6 +15,7 @@
 		<module>spring-aop-demo</module>
         <module>mongodb-demo</module>
         <module>shiro</module>
+		<module>jaxb-demo</module>
     </modules>
 
 	<properties>
